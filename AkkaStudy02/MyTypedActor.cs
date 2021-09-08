@@ -11,7 +11,7 @@ namespace AkkaStudy02
     {
         public MyTypedActor()
         {
-
+            Receive<string>(message => Console.WriteLine(message));
         }
     }
 }
