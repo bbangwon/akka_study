@@ -7,7 +7,7 @@ namespace AkkaStudy02
     {
         static void Main(string[] args)
         {
-            new Program().Main_2();
+            new Program().Main_3();
         }
 
         void Main_1()
@@ -35,6 +35,19 @@ namespace AkkaStudy02
             receiveAsyncActor.Tell("https://www.syncfusion.com");
 
             system.WhenTerminated.GetAwaiter().GetResult();
+        }
+
+        void Main_3()
+        {
+            ActorSystem system = ActorSystem.Create("html-download-system");
+            IActorRef receiveAsyncActor = system.ActorOf<DownloadAnyHtmlActor>();
+
+            receiveAsyncActor.Tell("https://www.microsoft.com");
+            receiveAsyncActor.Tell(new Uri("https://www.syncfusion.com"));
+            receiveAsyncActor.Tell(new GreetingMessage("hi"));
+
+            Console.Read();
+            system.Terminate();
         }
     }
 }
