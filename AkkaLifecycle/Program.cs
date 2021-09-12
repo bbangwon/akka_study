@@ -15,7 +15,7 @@ namespace AkkaLifecycle
 
             emailSender.Tell(emailMessage);
 
-            Thread.Sleep(1000);
+            system.Stop(emailSender);
             system.Terminate();
             Console.Read();
         }
