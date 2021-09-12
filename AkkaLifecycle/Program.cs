@@ -14,8 +14,9 @@ namespace AkkaLifecycle
             EmailMessage emailMessage = new EmailMessage("from@mail.com", "to@mail.com", "Hi");            
 
             emailSender.Tell(emailMessage);
+            var result = emailSender.GracefulStop(TimeSpan.FromSeconds(10));
 
-            system.Stop(emailSender);
+            Thread.Sleep(1000);
             system.Terminate();
             Console.Read();
         }
