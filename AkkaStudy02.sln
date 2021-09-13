@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkkaDI", "AkkaDI\AkkaDI.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkkaFirst", "AkkaFirst\AkkaFirst.csproj", "{941C6C4C-3B28-4AAA-AE0F-E0BB17DCDDF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaLifecycle", "AkkaLifecycle\AkkaLifecycle.csproj", "{61393A86-939C-4C0E-8E76-27D8B65AB203}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkkaLifecycle", "AkkaLifecycle\AkkaLifecycle.csproj", "{61393A86-939C-4C0E-8E76-27D8B65AB203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaSwitchableBehaviour", "AkkaSwitchableBehaviour\AkkaSwitchableBehaviour.csproj", "{9A9A4291-383E-4D52-87B1-C50DFF17056F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{61393A86-939C-4C0E-8E76-27D8B65AB203}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61393A86-939C-4C0E-8E76-27D8B65AB203}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61393A86-939C-4C0E-8E76-27D8B65AB203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9A4291-383E-4D52-87B1-C50DFF17056F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9A4291-383E-4D52-87B1-C50DFF17056F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9A4291-383E-4D52-87B1-C50DFF17056F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9A4291-383E-4D52-87B1-C50DFF17056F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
