@@ -11,14 +11,16 @@ namespace AkkaLifecycle
             ActorSystem system = ActorSystem.Create("my-first-akka");
 
             IActorRef emailSender = system.ActorOf<EmailSenderActor>("emailSender");
-            EmailMessage emailMessage = new EmailMessage("from@mail.com", "to@mail.com", "Hi");            
 
-            emailSender.Tell(emailMessage);
-            var result = emailSender.GracefulStop(TimeSpan.FromSeconds(10));
+            EmailMessage invalidEmail = new EmailMessage("from@mail.com", "to@mail.com", null);
+            EmailMessage validEmail = new EmailMessage("from@mail.com", "to@mail.com", "Hi");            
 
-            Thread.Sleep(1000);
-            system.Terminate();
+            emailSender.Tell(validEmail);
+            emailSender.Tell(invalidEmail);
+            emailSender.Tell(validEmail);
+
             Console.Read();
+            system.Terminate();
         }
     }
 }
