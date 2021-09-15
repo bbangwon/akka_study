@@ -28,6 +28,8 @@ namespace ActorHierarchies
         {
             CurrentSong = message;
             Console.WriteLine($"{CurrentSong.User} is Currently listening to '{CurrentSong.Song}'");
+
+            DisplayInformation();
             Become(PlayingBehaviour);
         }
 
@@ -36,6 +38,15 @@ namespace ActorHierarchies
             Console.WriteLine($"{CurrentSong.User}'s Player is currently stopped.");
             CurrentSong = null;
             Become(StoppedBehaviour);
+        }
+
+        void DisplayInformation()
+        {
+            Console.WriteLine("Actor's information:");
+            Console.WriteLine($"Typed Actor named: {Self.Path.Name}");
+            Console.WriteLine($"Actor's path: {Self.Path}");
+            Console.WriteLine($"Actor is part of the ActorSystem: {Context.System.Name}");
+            Console.WriteLine($"Actor's parent: {Context.Self.Path.Parent.Name}");
         }
     }
 }
