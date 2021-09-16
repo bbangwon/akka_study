@@ -30,6 +30,10 @@ namespace ActorHierarchies
             Console.WriteLine($"{CurrentSong.User} is Currently listening to '{CurrentSong.Song}'");
 
             DisplayInformation();
+
+            var statsActor = Context.ActorSelection("../../statistics");
+            statsActor.Tell(message);
+
             Become(PlayingBehaviour);
         }
 
