@@ -8,6 +8,25 @@ namespace ActorHierarchies
     {
         protected Dictionary<string, IActorRef> MusicPlayerActors;
 
+        protected override SupervisorStrategy SupervisorStrategy()
+        {
+            return new OneForOneStrategy(e =>
+            {
+                if(e is SongNotAvailableException)
+                {
+                    return Directive.Resume;
+                }
+                else if(e is MusicSystemCorruptedException)
+                {
+                    return Directive.Restart;
+                }
+                else
+                {
+                    return Directive.Stop;
+                }
+            });
+        }
+
         public MusicPlayerCoordinatorActor()
         {
             MusicPlayerActors = new Dictionary<string, IActorRef>();

@@ -11,9 +11,8 @@ namespace ActorHierarchies
             IActorRef dispatcher = system.ActorOf<MusicPlayerCoordinatorActor>("player-coordinator");
             var stats = system.ActorOf<SongPerformanceActor>("statistics");
 
-            dispatcher.Tell(new PlaySongMessage("Smoke on the water", "Jhon"));
-            dispatcher.Tell(new PlaySongMessage("Smoke on the water", "Mike"));
-            dispatcher.Tell(new PlaySongMessage("Another Brick in the wall", "Andrew"));
+            dispatcher.Tell(new PlaySongMessage("Bohemian Rhapsody", "Jhon"));
+            dispatcher.Tell(new PlaySongMessage("Stairway to Heaven", "Andrew"));
 
             Console.Read();
 

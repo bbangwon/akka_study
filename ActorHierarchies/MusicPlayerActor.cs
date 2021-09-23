@@ -27,6 +27,16 @@ namespace ActorHierarchies
         void PlaySong(PlaySongMessage message)
         {
             CurrentSong = message;
+            if(message.Song == "Bohemian Rhapsody")
+            {
+                throw new SongNotAvailableException("Bohemian Rhapsody is not available");
+            }
+
+            if(message.Song == "Stairway to Heaven")
+            {
+                throw new MusicSystemCorruptedException("Song is a corrupt state");
+            }
+
             Console.WriteLine($"{CurrentSong.User} is Currently listening to '{CurrentSong.Song}'");
 
             DisplayInformation();
@@ -51,6 +61,22 @@ namespace ActorHierarchies
             Console.WriteLine($"Actor's path: {Self.Path}");
             Console.WriteLine($"Actor is part of the ActorSystem: {Context.System.Name}");
             Console.WriteLine($"Actor's parent: {Context.Self.Path.Parent.Name}");
+        }
+    }
+
+    public class SongNotAvailableException: Exception
+    {
+        public SongNotAvailableException(string message): base(message)
+        {
+
+        }
+    }
+
+    public class MusicSystemCorruptedException: Exception
+    {
+        public MusicSystemCorruptedException(string message): base(message)
+        {
+
         }
     }
 }
