@@ -6,7 +6,7 @@ namespace ActorHierarchies
 {
     public class SongPerformanceActor : ReceiveActor
     {
-        protected Dictionary<string, int> SongPerformanceCounter;
+        public Dictionary<string, int> SongPerformanceCounter;
 
         public SongPerformanceActor()
         {
