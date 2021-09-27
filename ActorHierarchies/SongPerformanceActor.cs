@@ -26,6 +26,8 @@ namespace ActorHierarchies
                 SongPerformanceCounter.Add(m.Song, counter);
             }
             Console.WriteLine($"Song: {m.Song} has been played {counter} times");
+
+            Sender.Tell(new CountIncreasedMessage(m.Song, counter));
         }
     }
 }
