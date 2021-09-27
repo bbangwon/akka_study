@@ -4,6 +4,7 @@ using System.Linq;
 using ActorHierarchies;
 using Akka.TestKit;
 using System;
+using Akka.Actor;
 
 namespace AkkaTestKitEx
 {
@@ -51,6 +52,20 @@ namespace AkkaTestKitEx
             var counter = ExpectMsg<CountIncreasedMessage>(TimeSpan.FromSeconds(5));
             Assert.That(counter.Song == "Bohemian Rhapsody");
             Assert.That(counter.Count == 1);
+        }
+
+        [Test]
+        public void ShouldInstantiateANewChildActor()
+        {
+            TestActorRef<MusicPlayerCoordinatorActorForTest> actor = ActorOfAsTestActorRef(() => new MusicPlayerCoordinatorActorForTest(), "Coordinator");
+            var songMessaage = new PlaySongMessage("Bohemian Rhapsody", "John");
+            actor.Tell(songMessaage);
+
+            IActorRef child = this.Sys.ActorSelection("/user/Coordinator/John")
+                .ResolveOne(TimeSpan.FromSeconds(5))
+                .Result;
+
+            Assert.That(child != null);
         }
     }
 }
