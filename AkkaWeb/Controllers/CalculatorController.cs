@@ -1,9 +1,4 @@
-﻿using Akka.Actor;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace AkkaWebAPI.Controllers
@@ -65,7 +60,7 @@ namespace AkkaWebAPI.Controllers
         [HttpGet("sum")]
         public async Task<double> Sum(double x, double y)
         {
-            var answer = await CalculatorActor.Sum(new AddMessage(x, y));
+            var answer = await CalculatorActor.Sum(new AkkaRemoteCommon.AddMessage(x, y));
 
             return answer.Value;
         }

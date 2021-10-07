@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkkaTestKitEx", "AkkaTestKi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkkaRouters", "AkkaRouters\AkkaRouters.csproj", "{AAC7849F-611C-48DA-A070-212399D21C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaWebAPI", "AkkaWeb\AkkaWebAPI.csproj", "{D6914961-F03C-4888-8300-B1C33A917114}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkkaWebAPI", "AkkaWeb\AkkaWebAPI.csproj", "{D6914961-F03C-4888-8300-B1C33A917114}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkkaRemoteCommon", "AkkaRemoteCommon\AkkaRemoteCommon.csproj", "{AFD5A207-67C9-4460-916B-25898902ACAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkkaRemoteServer", "AkkaRemoteServer\AkkaRemoteServer.csproj", "{D0592F02-2ABD-4853-A236-F36D7E42F225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{D6914961-F03C-4888-8300-B1C33A917114}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6914961-F03C-4888-8300-B1C33A917114}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6914961-F03C-4888-8300-B1C33A917114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD5A207-67C9-4460-916B-25898902ACAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD5A207-67C9-4460-916B-25898902ACAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD5A207-67C9-4460-916B-25898902ACAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD5A207-67C9-4460-916B-25898902ACAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0592F02-2ABD-4853-A236-F36D7E42F225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0592F02-2ABD-4853-A236-F36D7E42F225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0592F02-2ABD-4853-A236-F36D7E42F225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0592F02-2ABD-4853-A236-F36D7E42F225}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

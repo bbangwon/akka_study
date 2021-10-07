@@ -1,4 +1,5 @@
 using Akka.Actor;
+using AkkaRemoteCommon;
 using AkkaWebAPI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,7 +27,8 @@ namespace AkkaWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var actorSystem = ActorSystem.Create("calculator-actor-system");
+            var hocon = HoconLoader.FromFile("akka.net.hocon");
+            var actorSystem = ActorSystem.Create("calculator-actor-system", hocon);
             services.AddSingleton(typeof(ActorSystem), serviceProvider => actorSystem);
             services.AddSingleton(typeof(ICalculatorActorInstance), typeof(CalculatorActorInstance));
             services.AddControllers();
